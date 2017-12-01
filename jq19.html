@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jquery</title>
+	<script type ="text/javascript" src="jquery-3.2.1.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="jquery-ui/jquery-ui.css"></script> 
+	<style type="text/css">
+		  
+	</style>
+  </head>
+  <body>
+    <div id="draggable">Drag Me horizontally!</div>
+	<div id="box" style="background-color:yellow;height:300px;width:300px">
+	  <span>I am stuck within the box</span>
+	</div>
+    <script type="text/javascript">
+	   $( "#draggable" ).draggable({ axis: "x" });
+	    $( "span" ).draggable({ containment: "#box" });
+	</script>
+  </body>
+</html>

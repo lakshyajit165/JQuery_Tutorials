@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery</title>
+	<script src="jquery-3.2.1.js"></script>
+	<style type="text/css">
+	  #circle{
+	    width:150px;
+		height:150px;
+		border-radius:50%;
+		margin:10px;
+		background-color:green;
+	  }
+	  #square1{
+	    width:150px;
+		height:150px;
+		margin:10px;
+		background-color:red;
+	  }
+	  #square2{
+	    width:150px;
+		height:150px;
+		margin:10px;
+		background-color:red;
+	  }
+	</style>
+  </head>
+  <body>
+    <div id="circle"></div>
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <script type="text/javascript">
+	  
+	  $("div").click(function(){
+	     if($(this).attr("id")=="circle"){
+		   $(this).css("background-color","red");
+		 }else if($(this).attr("id")=="square1"||$(this).attr("id")=="square2"){
+		   $(this).css("background-color","yellow");
+		 }
+	  });
+	</script>
+  </body>
+</html>

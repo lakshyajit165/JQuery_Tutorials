@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery</title>
+	<script src="jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <p>What is the capital of India?</p>
+	<input type="radio" name="button" id="Delhi">Delhi<br>
+	<input type="radio" name="button" id="Mumbai">Mumbai<br>
+	<input type="radio" name="button" id="Chennai">Chennai<br>
+	<input type="radio" name="button" id="Kolkata">Kolkata<br>
+	<button id="ans">Submit</button>  
+	<p id="show"></p>
+	<script>
+	  $("#ans").click(function(){
+	    if($('#Delhi').is(':checked')) { $("#show").html("Correct answer"); 
+
+		}else{
+		  $("#show").html("Wrong answer");
+		}
+
+	  });
+	</script>
+  </body>
+</html>

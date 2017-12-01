@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery</title>
+	<script src="jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <p>THis is some text!</p>
+	<button id="fade">Fade Toggle Text</button>
+    <script>
+	 $("#fade").click(function(){
+	   $("p").fadeToggle("slow");
+	 });
+	</script>
+  </body>
+</html>

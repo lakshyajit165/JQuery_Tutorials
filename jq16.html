@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery</title>
+	<script src="jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <p id="para1">THis is some text!</p>
+	<p id="para2" style="display:none">I appear only after my friend disappears!!</p>
+	<button id="fade">FadeIn/Out Text</button>
+    <script>
+	 $("#fade").click(function(){
+	   $("#para1").fadeOut("slow",function(){
+	     $("#para2").fadeIn("slow");
+	   });
+	 });
+	</script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jquery</title>
+	<script type ="text/javascript" src="jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    
+    <script type="text/javascript">
+	  $(document).ready(function(){
+	    $("p").on({
+		    mouseenter: function(){
+		      $(this).css("background-color","lightgray");
+		   },
+		   mouseleave: function(){
+		      $(this).css("background-color","lightblue");
+		   },
+		   click:function(){
+		      $(this).css("background-color","yellow");
+		   }
+		});
+	  });
+	</script>
+	<p>Move the mouse over this element,or click it to see the effect</p>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery</title>
+	<script src="jquery-3.2.1.js"></script>
+	
+  </head>
+  <body>
+    <div id="questionEl"></div>
+	<input type="radio" name="button" value="1" id="o1"><label id="opt1"></label><br>
+	<input type="radio" name="button" value="2" id="o2"><label id="opt2"></label><br>
+	<input type="radio" name="button" value="3" id="o3"><label id="opt3"></label><br>
+	<input type="radio" name="button" value="4" id="o4"><label id="opt4"></label><br>
+	<button id="ans" onclick="loadNext()">next</button>  
+	<p id="show"></p>
+	<script>
+	  var questions=[{"question":"What is the capital of India?",
+                "option1":"Delhi",
+				"option2":"Mumbai",
+				"option3":"Kolkata",
+				"option4":"Chennai",
+                "answer":"1"},
+			   {"question":"What is the capital of Odisha?",
+                "option1":"Cuttack",
+				"option2":"Rourkela",
+				"option3":"Bhubaneswar",
+				"option4":"Bhadrak",
+                "answer":"3"},
+				{"question":"What is the national flower of India?",
+                "option1":"Sunflower",
+				"option2":"Lotus",
+				"option3":"Jasmine",
+				"option4":"Rose",
+                "answer":"2"},];
+				
+	  var qIndex;
+	  var current_q=0;
+	  var score=0;
+	  var totq=questions.length;
+	  
+	 function loadQuestion(qIndex){
+	     var q=questions[qIndex];
+		 $("#questionEl").html(q.question); 
+		 $("#opt1").html(q.option1); 
+		 $("#opt2").html(q.option2); 
+		 $("#opt3").html(q.option3); 
+		 $("#opt4").html(q.option4); 
+		}
+	  
+	  
+	  function loadNext(){
+	     var selectedOption=document.querySelector("input[type=radio]:checked");
+		 if(!selectedOption){
+		   alert('Please select your answer');
+		   return;
+		 }
+		 if(questions[current_q].answer==selectedOption.value){
+		      score+=10;
+		      
+	          
+              
+		 }
+         if(current_q==totq-1){
+		    document.getElementById("ans").value="Finish";
+		 }
+		current_q++; 
+        selectedOption.checked=false;
+		loadQuestion(current_q);
+ 		 if(current_q==totq)
+		   document.getElementById("show").innerHTML="Your Score: "+score;
+	  }
+	  
+	  loadQuestion(current_q);
+	</script>
+  </body>
+</html>
